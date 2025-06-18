@@ -1,6 +1,6 @@
-package com.asuNisum.library;
+package com.example.calculator;
 
-import com.asuNisum.library.model.Book;
+import com.example.calculator.model.BookQ5;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class BookIntegrationTest {
 
     @Test
     void testCreateAndGetBooks() throws Exception {
-        Book book = new Book();
+        BookQ5 book = new BookQ5();
         book.setTitle("Clean Code");
         book.setAuthor("Robert C. Martin");
         book.setPublishedYear(2008);

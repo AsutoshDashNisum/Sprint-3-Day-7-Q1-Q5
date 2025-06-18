@@ -1,3 +1,5 @@
-com\example\calculator\LifecycleTest.class
 com\example\calculator\AsuUserTest.class
+com\example\calculator\BookIntegrationTest.class
 com\example\calculator\CalculatorTest.class
+com\example\calculator\LifecycleTestQ2.class
+com\example\calculator\ProductIntegrationTestQ4.class

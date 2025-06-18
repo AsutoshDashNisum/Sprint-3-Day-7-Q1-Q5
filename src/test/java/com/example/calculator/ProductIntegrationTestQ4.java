@@ -1,6 +1,6 @@
 package com.example.calculator;
 
-import com.asuNisum.productdashboard.model.Product;
+import com.example.calculator.model.ProductQ4;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class ProductIntegrationTestQ4 {
 
     @Test
     void testCreateAndGetProduct() throws Exception {
-        Product product = new Product();
+        ProductQ4 product = new ProductQ4();
         product.setName("Laptop");
         product.setDescription("Gaming Laptop");
         product.setPrice(1200.50);

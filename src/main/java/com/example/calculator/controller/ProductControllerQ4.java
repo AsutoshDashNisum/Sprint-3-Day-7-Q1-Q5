@@ -1,5 +1,6 @@
 package com.example.calculator.controller;
 
+import com.example.calculator.model.ProductQ4;
 import com.example.calculator.repository.ProductRepositoryQ4;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,27 +17,27 @@ public class ProductControllerQ4 {
     private ProductRepositoryQ4 productRepository;
 
     @GetMapping
-    public List<Product> getAllProducts() {
+    public List<ProductQ4> getAllProducts() {
         return productRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
+    public ResponseEntity<ProductQ4> getProductById(@PathVariable Long id) {
         return productRepository.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public Product createProduct(@RequestBody Product product) {
+    public ProductQ4 createProduct(@RequestBody ProductQ4 product) {
         return productRepository.save(product);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product productDetails) {
-        Optional<Product> optionalProduct = productRepository.findById(id);
+    public ResponseEntity<ProductQ4> updateProduct(@PathVariable Long id, @RequestBody ProductQ4 productDetails) {
+        Optional<ProductQ4> optionalProduct = productRepository.findById(id);
         if (optionalProduct.isPresent()) {
-            Product product = optionalProduct.get();
+            ProductQ4 product = optionalProduct.get();
             product.setName(productDetails.getName());
             product.setDescription(productDetails.getDescription());
             product.setPrice(productDetails.getPrice());
